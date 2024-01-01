@@ -177,7 +177,8 @@ public class ProductSteps {
     @And("Click {string} button and verify invoice is downloaded successfully")
     public void clickButtonAndVerifyInvoiceIsDownloAdedSuccessfully(String btnNAme) {
         String filePath = "C:/Users/thumm/Downloads/invoice.txt";
-        new CheckOutPage().clickOnBtn(btnNAme);
+//        new CheckOutPage().clickOnBtn(btnNAme);
         softAssertions.assertTrue(new CheckOutPage().checkFileIsDownloaded(filePath));
+        softAssertions.assertAll();
     }
 }

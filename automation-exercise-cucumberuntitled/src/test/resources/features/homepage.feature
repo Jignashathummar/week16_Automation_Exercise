@@ -7,7 +7,6 @@ Feature: In order to explore and interact with the features on the Home Page,
 
   Background:
     Given I am on Home Page.
-    @test
 @author_JignashThummar @smoke @sanity
   Scenario: User can Fill Contact US Form
     When I click on top menu "Contact us"
