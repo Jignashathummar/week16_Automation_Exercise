@@ -736,3 +736,15 @@
 2024-01-01 10:01:809 INFO  RegistrationPage :132 - Click On Create Account Button[[ChromeDriver: chrome on windows (0f0bd64514a24af15a8903d138067175)] -> xpath: //button[normalize-space()='Create Account']]
 2024-01-01 10:01:864 INFO  RegistrationPage :191 - Verify text ACCOUNT CREATED![[ChromeDriver: chrome on windows (0f0bd64514a24af15a8903d138067175)] -> tag name: b]
 2024-01-01 10:01:10 INFO  RegistrationPage :135 - Click On Continue Button[[ChromeDriver: chrome on windows (0f0bd64514a24af15a8903d138067175)] -> link text: Continue]
+2024-01-01 14:01:342 INFO  RegistrationPage :67 - Selecting menu [[ChromeDriver: chrome on windows (bb9025587ba09b37f77ed813bb4efcab)] -> xpath: //ul[@class='nav navbar-nav']/li]
+2024-01-01 14:01:445 INFO  RegistrationPage :52 - Verify Text Get In Touch[[ChromeDriver: chrome on windows (bb9025587ba09b37f77ed813bb4efcab)] -> xpath: //div[@class='contact-form']/h2]
+2024-01-01 14:01:622 INFO  RegistrationPage :65 - Enter Name[[ChromeDriver: chrome on windows (bb9025587ba09b37f77ed813bb4efcab)] -> name: name]
+2024-01-01 14:01:745 INFO  RegistrationPage :67 - Enter Email[[ChromeDriver: chrome on windows (bb9025587ba09b37f77ed813bb4efcab)] -> name: email]
+2024-01-01 14:01:807 INFO  RegistrationPage :69 - Enter Subject[[ChromeDriver: chrome on windows (bb9025587ba09b37f77ed813bb4efcab)] -> name: subject]
+2024-01-01 14:01:891 INFO  RegistrationPage :71 - Enter Message[[ChromeDriver: chrome on windows (bb9025587ba09b37f77ed813bb4efcab)] -> id: message]
+2024-01-01 14:01:931 INFO  RegistrationPage :76 - Upload File[[ChromeDriver: chrome on windows (bb9025587ba09b37f77ed813bb4efcab)] -> name: upload_file]
+2024-01-01 14:01:30 INFO  RegistrationPage :81 - Click On Submit Button[[ChromeDriver: chrome on windows (bb9025587ba09b37f77ed813bb4efcab)] -> name: submit]
+2024-01-01 14:01:37 INFO  RegistrationPage :86 - Click on SSwitch to Alert
+2024-01-01 14:01:45 INFO  RegistrationPage :88 - Click on accept alert
+2024-01-01 14:01:81 INFO  RegistrationPage :55 - Verify Text Success Msg After Submit on contact Us[[ChromeDriver: chrome on windows (bb9025587ba09b37f77ed813bb4efcab)] -> xpath: //div[@class='status alert alert-success']]
+2024-01-01 14:01:157 INFO  RegistrationPage :93 - Click On Home Button[[ChromeDriver: chrome on windows (bb9025587ba09b37f77ed813bb4efcab)] -> xpath: //a[@class='btn btn-success']]

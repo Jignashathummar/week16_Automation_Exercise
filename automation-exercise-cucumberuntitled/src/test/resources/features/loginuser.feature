@@ -1,3 +1,4 @@
+@regression
 Feature: Login Feature
   User have to perform Successfully Login
   User can Login with incorrect email and password
@@ -7,19 +8,19 @@ Feature: Login Feature
     Given I am on Home Page.
     When I click on top menu "Signup / Login"
     And Verify "Login to your account" is visible
-
+  @author_JignashThummar @smoke @sanity
   Scenario: User should Login Successfully
     And I enter email: "primeIRir@gmail.com" and password: "Prime@123"
     And I click "login" button
     And Verify that "Logged in as Prime" visible.
     And I click on top menu "Delete Account"
     Then Verify that "ACCOUNT DELETED!" is visible and click "Continue" button
-
+  @author_JignashThummar @smoke
   Scenario: User should Login with incorrect email and password
     And I enter email: "primeUx842@gmail.com" and password: "Prime@123"
     And I click "login" button
     Then Verify that "Your email or password is incorrect!" visible.
-
+  @author_JignashThummar
   Scenario: User should Logout Successfully
     And I enter email: "primeUx84@gmail.com" and password: "Prime@123"
     And I click "login" button

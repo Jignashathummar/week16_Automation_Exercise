@@ -1,3 +1,4 @@
+@regression
 Feature: Register Feature
   User have to perform Successfully Register
   User can register with existing email
@@ -6,7 +7,7 @@ Feature: Register Feature
   Background:
     Given I am on Home Page.
     When I click on top menu "Signup / Login"
-
+  @author_JignashThummar @smoke @sanity
   Scenario: User can Register successfully.
     And Verify that "New User Signup!" visible.
     And I Enter "Prime" and email address.
@@ -21,13 +22,13 @@ Feature: Register Feature
     And Verify that "Logged in as Prime" visible.
     And I click on top menu "Delete Account"
     Then Verify that "ACCOUNT DELETED!" is visible and click "Continue" button
-
+  @author_JignashThummar @smoke
   Scenario: User should register with existing email
     And Verify that "New User Signup!" visible.
     And I Enter "Prime" and email: "primeUx84@gmail.com"
     And I Click on "Signup" button.
     Then Verify that "Email Address already exist!" visible.
-
+  @author_JignashThummar
   Scenario: User should verify address details in checkout page
     And I Enter "Prime" and email address.
     And I Click on "Signup" button.
