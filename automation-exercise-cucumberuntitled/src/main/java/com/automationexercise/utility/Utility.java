@@ -264,6 +264,11 @@ public class Utility extends ManageBrowser {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(time));
         return wait.until(ExpectedConditions.visibilityOfElementLocated(by));
     }
+    public boolean waitUntilFileIsDownloaded(String downloadFilePath, int time) {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(time));
+        return wait.until((WebDriver d) -> isFileDownloaded(downloadFilePath));
+    }
+
 
     public WebElement waitForElementWithFluentWait(By by, int time, int pollingTime) {
         Wait<WebDriver> wait = new FluentWait<WebDriver>(driver)

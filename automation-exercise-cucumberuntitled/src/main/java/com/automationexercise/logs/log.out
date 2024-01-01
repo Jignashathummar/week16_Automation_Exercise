@@ -748,3 +748,8 @@
 2024-01-01 14:01:45 INFO  RegistrationPage :88 - Click on accept alert
 2024-01-01 14:01:81 INFO  RegistrationPage :55 - Verify Text Success Msg After Submit on contact Us[[ChromeDriver: chrome on windows (bb9025587ba09b37f77ed813bb4efcab)] -> xpath: //div[@class='status alert alert-success']]
 2024-01-01 14:01:157 INFO  RegistrationPage :93 - Click On Home Button[[ChromeDriver: chrome on windows (bb9025587ba09b37f77ed813bb4efcab)] -> xpath: //a[@class='btn btn-success']]
+2024-01-01 14:01:598 INFO  RegistrationPage :116 - Verify field downloaded filetrue
+2024-01-01 14:01:63 INFO  RegistrationPage :116 - Verify field downloaded filefalse
+2024-01-01 14:01:221 INFO  RegistrationPage :116 - Verify field downloaded filefalse
+2024-01-01 14:01:921 INFO  RegistrationPage :116 - Verify field downloaded filetrue
+2024-01-01 14:01:356 INFO  RegistrationPage :116 - Verify field downloaded filetrue

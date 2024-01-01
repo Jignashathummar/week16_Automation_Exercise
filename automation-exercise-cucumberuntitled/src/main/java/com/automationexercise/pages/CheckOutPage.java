@@ -114,7 +114,7 @@ public class CheckOutPage extends Utility {
 
     public boolean checkFileIsDownloaded(String filePath) {
         log.info("Verify field downloaded file" + isFileDownloaded(filePath));
-        return isFileDownloaded(filePath);
+        return waitUntilFileIsDownloaded(filePath, 20);
     }
 }
 
