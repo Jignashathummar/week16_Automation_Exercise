@@ -19,6 +19,6 @@ public class Hooks extends Utility {
             final  byte[]  screenshot = getScreenShot();
             scenario.attach(screenshot, "image/png", scenario.getName());
         }
-//        closeBrowser();
+        closeBrowser();
     }
 }

@@ -1,3 +1,4 @@
+@regression
 Feature: In order to explore and interact with the features on the Home Page,
   As a user, I want to perform various actions (verify Test case page, subscription,  and verify corresponding outcomes.
   User can verify Test case page
@@ -6,7 +7,8 @@ Feature: In order to explore and interact with the features on the Home Page,
 
   Background:
     Given I am on Home Page.
-
+    @test
+@author_JignashThummar @smoke @sanity
   Scenario: User can Fill Contact US Form
     When I click on top menu "Contact us"
     And Verify text "Get In Touch" is visible
@@ -18,10 +20,11 @@ Feature: In order to explore and interact with the features on the Home Page,
     Then I Click "Home" button
     And verify that landed to home page successfully.
 
+  @author_JignashThummar  @smoke
   Scenario: User should verify Test cases Page
     When I click on top menu "Test Cases"
     Then Verify text "Test Cases" is visible
-
+  @author_JignashThummar
   Scenario:  User should added product in cart from Recommended items
     When Scroll down page to "RECOMMENDED ITEMS"
     And Verify that "RECOMMENDED ITEMS" is visible
@@ -29,19 +32,19 @@ Feature: In order to explore and interact with the features on the Home Page,
     And Click on "View Cart" button
     Then  Verify that "Stylish Dress" in cart page
 
-
+  @author_JignashThummar
   Scenario: User should verify Subscription in on Home page
     And Scroll down page to "SUBSCRIPTION"
     And Verify that "SUBSCRIPTION" is visible
     And  Enter email "prime123@gmail.com" in input and click arrow button
     Then Verify that "You have been successfully subscribed!" is visible
-
+  @author_JignashThummar
   Scenario: User should verify scroll Up using 'Arrow' button and Scroll Down functionality.
     And Scroll down page to "SUBSCRIPTION"
     And Verify that "SUBSCRIPTION" is visible
     And Click on arrow at bottom right side to move upward
     And Verify that page is scrolled up and "Full-Fledged practice website for Automation Engineers" text is visible on screen
-
+  @author_JignashThummar
   Scenario: User should verify Scroll Up without 'Arrow' button and Scroll Down functionality
     And Scroll down page to "SUBSCRIPTION"
     And Verify that "SUBSCRIPTION" is visible
