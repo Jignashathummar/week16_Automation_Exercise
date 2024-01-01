@@ -41,6 +41,10 @@ public class ManageBrowser {
         return driver.getCurrentUrl();
     }
 
+    public static void refreshPage(){
+        driver.navigate().refresh();
+    }
+
     public void closeBrowser() {
         if (driver != null) {
             driver.quit();

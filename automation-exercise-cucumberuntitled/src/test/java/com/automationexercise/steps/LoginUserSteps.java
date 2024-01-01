@@ -1,8 +1,10 @@
 package com.automationexercise.steps;
 
-import com.pages.LoginPage;
+import com.automationexercise.pages.LoginPage;
 import io.cucumber.java.en.And;
+import org.testng.Assert;
 
+import static com.automationexercise.browserfactory.ManageBrowser.getCurrentURL;
 import static com.automationexercise.browserfactory.ManageBrowser.softAssertions;
 
 public class LoginUserSteps {
@@ -20,5 +22,10 @@ public class LoginUserSteps {
     @And("I click {string} button")
     public void iClickButton(String btnText) {
         new LoginPage().clickOnLoginBtn();
+    }
+
+    @And("Verify that user is navigated to login page")
+    public void verifyThatUserIsNavigatedToLoginPage() {
+        Assert.assertEquals(getCurrentURL(), "https://automationexercise.com/login");
     }
 }

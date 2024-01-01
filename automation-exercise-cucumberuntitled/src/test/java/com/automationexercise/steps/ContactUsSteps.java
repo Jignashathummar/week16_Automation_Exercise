@@ -1,6 +1,6 @@
 package com.automationexercise.steps;
 
-import com.pages.ContactUsPage;
+import com.automationexercise.pages.ContactUsPage;
 import io.cucumber.java.en.And;
 
 import static com.automationexercise.browserfactory.ManageBrowser.getCurrentURL;

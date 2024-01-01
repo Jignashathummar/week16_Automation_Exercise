@@ -2,12 +2,13 @@ package com.automationexercise.utility;
 
 import com.automationexercise.browserfactory.ManageBrowser;
 import com.google.common.base.Function;
-import com.pages.RegistrationPage;
+import com.automationexercise.pages.RegistrationPage;
 import org.apache.commons.io.FileUtils;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.locators.RelativeLocator;
 import org.openqa.selenium.support.ui.*;
 
 import java.io.File;
@@ -16,6 +17,8 @@ import java.time.Duration;
 import java.util.Date;
 import java.util.List;
 
+import static org.openqa.selenium.support.locators.RelativeLocator.with;
+
 public class Utility extends ManageBrowser {
     /*Utility Class extends to ManageBrowser for the driver to finding locators
      *All common methods are fixed in the utility Class.
@@ -23,10 +26,10 @@ public class Utility extends ManageBrowser {
      * This method will generate random number
      */
     protected static final Logger log = LogManager.getLogger(RegistrationPage.class);
-    public int generateRandomNumber() {
-        return (int) (Math.random() * 5000 + 1);
-
-    }
+//    public int generateRandomNumber() {
+//        return (int) (Math.random() * 5000 + 1);
+//
+//    }
 
 
     /**
@@ -183,7 +186,7 @@ public class Utility extends ManageBrowser {
         }
     }
 
-    public void selectByContainsByAttributeFromDropDown(List<WebElement> elementList, String text,String attributeType) {
+    public void selectByContainsByAttributeFromDropDown(List<WebElement> elementList, String text, String attributeType) {
         for (WebElement options : elementList) {
             if (options.getAttribute(attributeType).contains(text)) {
                 options.click();
@@ -362,4 +365,47 @@ public class Utility extends ManageBrowser {
     public static byte[] getScreenShot() {
         return ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
     }
+
+    public static void scrollToElement(WebElement element) {
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
+    }
+
+    public static boolean isElementWithinVisibleScreen(WebElement element) {
+        // Use JavascriptExecutor to get the element's position
+        Double elementPosition = (Double) ((JavascriptExecutor) driver).executeScript("return arguments[0].getBoundingClientRect().top;", element);
+        // Get the viewport height
+        long viewportHeight = (Long) ((JavascriptExecutor) driver).executeScript("return window.innerHeight;");
+        // Check if the element is within the viewport
+        return elementPosition >= 0 && elementPosition <= viewportHeight;
+    }
+
+    public static void scrollToTop() {
+        ((JavascriptExecutor) driver).executeScript("window.scrollTo(0, 0)");
+    }
+
+    //********************Relative Locator Method for find Webelement****************
+    public WebElement getTextRelativeLocatorToRightOf(By baseElementBy, String tagName) {
+        return driver.findElement(RelativeLocator.with(By.tagName(tagName)).toRightOf(baseElementBy));
+    }
+
+    // Custom method to find an element to the left of the base element
+    public WebElement getTextRelativeLocatorToLeftOf(By baseElementBy, String tagName) {
+        return driver.findElement(RelativeLocator.with(By.tagName(tagName)).toLeftOf(baseElementBy));
+    }
+
+    public static WebElement findElementRelativeTo(WebElement baseElement, By relativeLocator, String side) {
+        WebElement element = null;
+        if(side.equalsIgnoreCase("below")){
+            element = driver.findElement(with(relativeLocator).below(baseElement));
+        } else if (side.equalsIgnoreCase("near")) {
+            element = driver.findElement(with(relativeLocator).near(baseElement));
+        }
+        return element;
+    }
+
+    public static boolean isFileDownloaded(String filePath) {
+        File file = new File(filePath);
+        return file.exists() && file.isFile();
+    }
+
 }

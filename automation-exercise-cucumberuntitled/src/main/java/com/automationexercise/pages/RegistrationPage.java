@@ -1,4 +1,4 @@
-package com.pages;
+package com.automationexercise.pages;
 
 import com.automationexercise.utility.Utility;
 import org.openqa.selenium.WebElement;

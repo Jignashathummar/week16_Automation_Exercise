@@ -1,136 +1,172 @@
-#Feature: Product page and Product Details
-#  User can Search product
-#  User can Verify subscription in Cart page
-#  User can Added Products in Cart
-#  User can Verify Product Quantity in Cart
-#  User can Place Order: Register while Checkout
-#  User can remove products From Cart
-#  User can search products and verify cart after login
-#
-#
-#  Scenario: User should verify Product page and Product details
-#    Given I am on Home Page.
-#    When Click on 'Products' button
-#    And Verify user is navigated to ALL PRODUCTS page successfully
-#    And The products list is visible
-#    And Click on 'View Product' of first product
-#    And User is landed to product detail page
-#    Then Verify that detail detail is visible: product name, category, price, availability, condition brand
-#
-#  Scenario: User should search the product
-#    Given I am on Home Page.
-#    When Click on "Products" button
-#    And Verify user is navigated to ALL PRODUCTS page successfully
-#    And  Enter product name in search input and click search button
-#    And Verify 'SEARCHED PRODUCTS' is visible
-#    Then Verify all the products related to search are visible
-#
-#  Scenario: User should verify Subscription in cart page
-#    Given I am on Home Page.
-#    When Click 'Cart' button
-#    And Scroll down to footer
-#    And Verify text 'SUBSCRIPTION'
-#    And Enter email address in input and click arrow button
-#    Then Verify success message 'You have been successfully subscribed!' is visible
-#
-#  Scenario: User should Added Products in Cart.
-#    Given I am on Home Page.
-#    When Click 'Products' button
-#    And Hover over first product and click 'Add to cart'
-#    And Click 'Continue Shopping' button
-#    And Hover over second product and click 'Add to cart'
-#    And Click 'View Cart' button
-#    And Verify both products are added to Cart
-#    Then Verify their prices, quantity and total price
-#
-#  Scenario: User Should Verify Product Quantity in Cart
-#    Given I am on Home Page.
-#    When Click 'View Product' for any product on home page
-#    And Verify product detail is opened
-#    And  Increase quantity to 4
-#    And Click 'Add to cart' button
-#    And Click 'View Cart' button
-#    Then Verify that product is displayed in cart page with exact quantity
-#
-#  Scenario: User should Place Order: Register while Checkout
-#    Given I am on Home Page.
-#    When  Add products to cart
-#    And Click 'Cart' button
-#    And Verify that cart page is displayed
-#    And Click Proceed To Checkout
-#    And Click 'Register / Login' button
-#    And Fill all details in Signup and create account
-#    And Verify 'ACCOUNT CREATED!' and click 'Continue' button
-#    And Verify ' Logged in as username' at top
-#    And Click 'Cart' button
-#    And Click 'Proceed To Checkout' button
-#    And Verify Address Details and Review Your Order
-#    And Enter description in comment text area and click 'Place Order'
-#    And Enter payment details: Name on Card, Card Number, CVC, Expiration date
-#    And Click 'Pay and Confirm Order' button
-#    And Verify success message 'Your order has been placed successfully!'
-#    And Click 'Delete Account' button
-#    Then Verify 'ACCOUNT DELETED!' and click 'Continue' button
-#
-#  Scenario: User should remove products From Cart
-#    Given I am on Home Page.
-#    When Add products to cart
-#    And Click 'Cart' button
-#    And  Verify that cart page is displayed
-#    And Click 'X' button corresponding to particular product
-#    Then Verify that product is removed from the cart
-#
-#  Scenario: User should view category products
-#    Given I am on Home Page.
-#    When Verify that categories are visible on left side bar
-#    And Click on 'Women' category
-#    And Click on any category link under 'Women' category, for example: Dress
-#    And Verify that category page is displayed and confirm text 'WOMEN - TOPS PRODUCTS'
-#    And On left side bar, click on any sub-category link of 'Men' category
-#    Then Verify that user is navigated to that category page
-#
-#  Scenario: User should search products and verify cart after login
-#    Given I am on Home Page.
-#    When User click on 'Products' button
-#    And Verify user is navigated to ALL PRODUCTS page successfully
-#    And Enter product name in search input and click search button
-#    And Verify 'SEARCHED PRODUCTS' is visible
-#    And Verify all the products related to search are visible
-#    And Add those products to cart
-#    And Click 'Cart' button and verify that products are visible in cart
-#    And Click 'Signup / Login' button and submit login details
-#    And Again, go to Cart page
-#    Then Verify that those products are visible in cart after login as well
-#
-#Scenario: User should review on product
-#  Given I am on Home Page.
-#  When Click on 'Products' button
-#  And Verify user is navigated to ALL PRODUCTS page successfully
-#  And Click on 'View Product' button
-#  And Verify 'Write Your Review' is visible
-#  And Enter name, email and review
-#  And Click 'Submit' button
-#  Then Verify success message 'Thank you for your review.'
-#
-#  Scenario: User should download Invoice after purchase order.
-#    Given I am on Home Page.
-#    When Add products to cart
-#    And Click 'Cart' button
-#    And Verify that cart page is displayed
-#    And Click Proceed To Checkout
-#    And Click 'Register / Login' button
-#    And Fill all details in Signup and create account
-#    And Verify 'ACCOUNT CREATED!' and click 'Continue' button
-#    And Verify ' Logged in as username' at top
-#    And Click 'Cart' button
-#    And Click 'Proceed To Checkout' button
-#    And Verify Address Details and Review Your Order
-#    And Enter description in comment text area and click 'Place Order'
-#    And Enter payment details: Name on Card, Card Number, CVC, Expiration date
-#    And Click 'Pay and Confirm Order' button
-#    And Verify success message 'Your order has been placed successfully!'
-#    And Click 'Download Invoice' button and verify invoice is downloaded successfully
-#    And Click 'Continue' button
-#    And  Click 'Delete Account' button
-#    Then Verify 'ACCOUNT DELETED!' and click 'Continue' button
-#
+Feature: Product page and Product Details
+  User can Search product
+  User can Verify subscription in Cart page
+  User can Added Products in Cart
+  User can Verify Product Quantity in Cart
+  User can Place Order: Register while Checkout
+  User can remove products From Cart
+  User can search products and verify cart after login
+
+  Background:
+    Given I am on Home Page.
+
+  Scenario: User should verify view and cart brand products
+    When I click on top menu " Products"
+    And Verify that "Brands" are visible on left side bar
+    And Click on brand Name "H&M"
+    And Verify that user is navigated to "https://automationexercise.com/brand_products/H&M" brand page and verify brand product "BRAND - H&M PRODUCTS" displayed
+    And Click on brand Name "MADAME"
+    And Verify that user is navigated to "https://automationexercise.com/brand_products/Madame" brand page and verify brand product "BRAND - MADAME PRODUCTS" displayed
+
+  Scenario: User should verify Product page and Product details
+    When I click on top menu " Products"
+    And Verify that user is navigated to "ALL PRODUCTS" page successfully
+    And Verify that the products list is visible
+    And I Click on "View Product" of first product "Blue Top"
+    And User is landed to product detail page
+    Then Verify that product detail is visible: product name: "Blue Top", category: "Category: Women > Tops", price: "Rs. 500", availability: "Availability: In Stock", condition: "Condition: New" brand: "Brand: Polo"
+
+  Scenario: User should search the product
+    When I click on top menu " Products"
+    And Verify that user is navigated to "ALL PRODUCTS" page successfully
+    And Enter Product name: "Sleeveless" in search input and click "search" button
+    And Verify that user is navigated to "SEARCHED PRODUCTS" page successfully
+    Then Verify all the products related to search "Sleeveless" are visible
+
+  Scenario: User should verify Subscription in cart page
+    When I click on top menu "Cart"
+    And Scroll down page to "SUBSCRIPTION"
+    And Verify that "SUBSCRIPTION" is visible
+    And  Enter email "prime123@gmail.com" in input and click arrow button
+    Then Verify that "You have been successfully subscribed!" is visible
+
+  Scenario: User should Added Products in Cart.
+    When I click on top menu " Products"
+    And Hover over first product "Blue Top" and click "Add to cart"
+    And Click on "Continue Shopping" button
+    And Hover over first product "Men Tshirt" and click "Add to cart"
+    And Click on "View Cart" button
+    Then Verify that product name: "Blue Top" prices: "Rs. 500", quantity: "1" and total price: "Rs. 500"
+    And Verify that product name: "Men Tshirt" prices: "Rs. 400", quantity: "1" and total price: "Rs. 400"
+
+  Scenario: User Should Verify Product Quantity in Cart
+    And I Click on "View Product" of first product "Madame Top For Women"
+    And Verify that product detail is visible: product name: "Madame Top For Women", category: "Category: Women > Tops", price: "Rs. 1000", availability: "Availability: In Stock", condition: "Condition: New" brand: "Brand: Madame"
+    And Increase quantity to "4"
+    And Click "Add to cart" button
+    And Click on "View Cart" button
+    Then Verify that product name: "Madame Top For Women" prices: "Rs. 1000", quantity: "4" and total price: "Rs. 4000"
+
+  Scenario: User should Place Order: Register while Checkout
+    And Click Add to Cart on "Blue Top" in "FEATURES ITEMS"
+    And I click on top menu "Cart"
+    And Verify that "Shopping Cart" page is displayed
+    And page refresh
+    And I Click on "Proceed To Checkout"
+    And I Click on "Register / Login"
+    And I Enter "Prime" and email address.
+    And I Click on "Signup" button.
+    And Verify that "ENTER ACCOUNT INFORMATION" visible.
+    And Fill Details: Title: "Mrs",Name,Email,Password: "Prime@123",Date of Birth: "15/November/2000", FirstName: "Prime", LastName: "Test",Company: "Prime",Address: "Alexendra Road",Country: "India", State: "Rajasthan", City: "Jaypur", Zipcode: "382350",Mobile Number: "9123453254"
+    And Select checkbox "Sign up for our newsletter!"
+    And Select checkbox "Receive special offers from our partners!"
+    And I Click on "Create Account" button.
+    And Verify that "ACCOUNT CREATED!" visible.
+    And I Click on "Continue" button.
+    And Verify that "Logged in as Prime" visible.
+    And I click on top menu "Cart"
+    And I Click on "Proceed To Checkout"
+    And Verify that the "DELIVERY" address Title: "Mrs",FirstName: "Prime", LastName: "Test",Address: "Alexendra Road",Country: "India", State: "Rajasthan", City: "Jaypur", Zipcode: "382350",Mobile Number: "9123453254" is same filled at the time registration of account
+    And Verify that the "BILLING" address Title: "Mrs",FirstName: "Prime", LastName: "Test",Address: "Alexendra Road",Country: "India", State: "Rajasthan", City: "Jaypur", Zipcode: "382350",Mobile Number: "9123453254" is same filled at the time registration of account
+    And Enter description: "I have choose this product." in comment text area and click "Place Order"
+    And Enter payment details: Name on Card: "Testing", Card Number: "4701322211111234", CVC:"837", Expiration date:"12/2026"
+    And I Click on "Pay and Confirm Order" button
+    Then Verify success message "Congratulations! Your order has been confirmed!"
+    And I click on top menu "Delete Account"
+    And Verify that "ACCOUNT DELETED!" is visible and click "Continue" button
+
+  Scenario: User should remove products From Cart
+    And Click Add to Cart on "Blue Top" in "FEATURES ITEMS"
+    And I click on top menu "Cart"
+    And Verify that "Shopping Cart" page is displayed
+    And Click "Blue Top" on X button corresponding to particular product
+    Then Verify that product is removed from the cart "Cart is empty! Click here to buy products."
+
+  Scenario: User should view category products
+    When Verify that "CATEGORY" are visible on left side bar
+    And I Click on any category link "Dress" under "Women" category
+    And Verify that category page is displayed and confirm text "WOMEN - DRESS PRODUCTS"
+    And I Click on any category link "TSHIRTS" under "Men" category
+    Then Verify that category page is displayed and confirm text "MEN - TSHIRTS PRODUCTS"
+
+  Scenario: User should search products and verify cart after login
+    When I click on top menu " Products"
+    And Verify that user is navigated to "ALL PRODUCTS" page successfully
+    And Enter Product name: "Sleeveless" in search input and click "search" button.
+    And Verify that user is navigated to "SEARCHED PRODUCTS" page successfully
+    And Verify all the products related to search "Sleeveless" are visible
+    And I Add those products to cart
+    And I click on top menu "Cart"
+    And Verify that products are visible in cart
+    And I click on top menu "Signup / Login"
+    And I enter email: "primeIRir@gmail.com" and password: "Prime@123"
+    And I click "login" button
+    And I click on top menu "Cart"
+    Then Verify that products are visible in cart
+
+  Scenario: User should review on product
+    When I click on top menu " Products"
+    And Verify that user is navigated to "ALL PRODUCTS" page successfully
+    And I Click on "View Product" of first product "Madame Top For Women"
+    And Verify that the "WRITE YOUR REVIEW" is visible
+    And Enter name: "Prime", email: "primeIRir@gmail.com" and review: "Test Review"
+    And I Click on "Submit" button
+    Then Verify that the "Thank you for your review." is visible
+
+  Scenario: User should download Invoice after purchase order.
+    And Click Add to Cart on "Blue Top" in "FEATURES ITEMS"
+    And I click on top menu "Cart"
+    And Verify that "Shopping Cart" page is displayed
+    And page refresh
+    And I Click on "Proceed To Checkout"
+    And I Click on "Register / Login"
+    And I Enter "Prime" and email address.
+    And I Click on "Signup" button.
+    And Verify that "ENTER ACCOUNT INFORMATION" visible.
+    And Fill Details: Title: "Mrs",Name,Email,Password: "Prime@123",Date of Birth: "15/November/2000", FirstName: "Prime", LastName: "Test",Company: "Prime",Address: "Alexendra Road",Country: "India", State: "Rajasthan", City: "Jaypur", Zipcode: "382350",Mobile Number: "9123453254"
+    And Select checkbox "Sign up for our newsletter!"
+    And Select checkbox "Receive special offers from our partners!"
+    And I Click on "Create Account" button.
+    And Verify that "ACCOUNT CREATED!" visible.
+    And I Click on "Continue" button.
+    And Verify that "Logged in as Prime" visible.
+    And I click on top menu "Cart"
+    And I Click on "Proceed To Checkout"
+    And Verify that the "DELIVERY" address Title: "Mrs",FirstName: "Prime", LastName: "Test",Address: "Alexendra Road",Country: "India", State: "Rajasthan", City: "Jaypur", Zipcode: "382350",Mobile Number: "9123453254" is same filled at the time registration of account
+    And Verify that the "BILLING" address Title: "Mrs",FirstName: "Prime", LastName: "Test",Address: "Alexendra Road",Country: "India", State: "Rajasthan", City: "Jaypur", Zipcode: "382350",Mobile Number: "9123453254" is same filled at the time registration of account
+    And Enter description: "I have choose this product." in comment text area and click "Place Order"
+    And Enter payment details: Name on Card: "Testing", Card Number: "4701322211111234", CVC:"837", Expiration date:"12/2026"
+    And I Click on "Pay and Confirm Order" button
+    Then Verify success message "Congratulations! Your order has been confirmed!"
+    And Click "Download Invoice" button and verify invoice is downloaded successfully
+    And I Click on "Continue" button
+    And I click on top menu "Delete Account"
+    And Verify that "ACCOUNT DELETED!" is visible and click "Continue" button
+
+  Scenario: User should  Place Order: Login before Checkout
+    And I click on top menu "Signup / Login"
+    And I enter email: "primeIRir@gmail.com" and password: "Prime@123"
+    And I click "login" button
+    And Verify that "Logged in as Prime" visible.
+    And Click Add to Cart on "Blue Top" in "FEATURES ITEMS"
+    And I click on top menu "Cart"
+    And Verify that "Shopping Cart" page is displayed
+    And I Click on "Proceed To Checkout"
+    And Verify that the "DELIVERY" address Title: "Mrs",FirstName: "Prime", LastName: "Test",Address: "Alexendra Road",Country: "India", State: "Rajasthan", City: "Jaypur", Zipcode: "382350",Mobile Number: "9123453254" is same filled at the time registration of account
+    And Verify that the "BILLING" address Title: "Mrs",FirstName: "Prime", LastName: "Test",Address: "Alexendra Road",Country: "India", State: "Rajasthan", City: "Jaypur", Zipcode: "382350",Mobile Number: "9123453254" is same filled at the time registration of account
+    And Enter description: "I have choose this product." in comment text area and click "Place Order"
+    And Enter payment details: Name on Card: "Testing", Card Number: "4701322211111234", CVC:"837", Expiration date:"12/2026"
+    And I Click on "Pay and Confirm Order" button
+    Then Verify success message "Congratulations! Your order has been confirmed!"
+    And I click on top menu "Delete Account"
+    And Verify that "ACCOUNT DELETED!" is visible and click "Continue" button

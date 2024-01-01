@@ -1,8 +1,6 @@
 package com.automationexercise.steps;
 
-import com.pages.DeleteAccountPage;
-import com.pages.HomePage;
-import com.pages.RegistrationPage;
+import com.automationexercise.pages.*;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -60,4 +58,20 @@ public class RegistrationPageSteps {
     public void iEnterAndEmail(String userName, String email) {
         new RegistrationPage().enterNameAndEmail(userName, email);
     }
+
+    @And("Verify that {string} page is displayed")
+    public void verifyThatPageIsDisplayed(String expectedText) {
+        Assert.assertEquals(new ViewCartPage().getTextCart(), expectedText, "Shopping cart is not Displayed");
+    }
+
+    @And("I Click on {string}")
+    public void iClickOn(String buttonText) {
+        new ViewCartPage().clickOnButton(buttonText);
+    }
+    @And("Verify that the {string} address Title: {string},FirstName: {string}, LastName: {string},Address: {string},Country: {string}, State: {string}, City: {string}, Zipcode: {string},Mobile Number: {string} is same filled at the time registration of account")
+    public void verifyThatTheAddressTitleFirstNameLastNameAddressCountryStateCityZipcodeMobileNumberIsSameFilledAtTheTimeRegistrationOfAccount(String addressType, String title, String firstName, String lastName, String address, String country, String state, String city, String zipcode, String mobileNumber) {
+        String expectedText = "YOUR "+addressType+" ADDRESS\n" + title + ". " + firstName + " " + lastName + "\n" + firstName + "\n" + address + "\n" + city + " " + state + " " + zipcode + "\n" + country + "\n" + mobileNumber;
+        Assert.assertEquals(new CheckOutPage().getTextAddressDetails(addressType), expectedText, "Delivery Address is not Matched");
+    }
+
 }
