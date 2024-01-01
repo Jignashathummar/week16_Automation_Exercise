@@ -63,57 +63,69 @@ public class ProductDetailsPage extends Utility {
     WebElement successReviewMsg;
 
     public String getProductName() {
+        log.info("get product name" + productName.toString());
         return getTextFromElement(productName);
     }
 
     public String getProductCategory() {
+        log.info("get product category" + productCategory.toString());
         return getTextFromElement(productCategory);
     }
 
     public String getProductPrice() {
+        log.info("get product pricr" + productPrice.toString());
         return getTextFromElement(productPrice);
     }
 
     public String getProductAvailability() {
+        log.info("get product availability" + productAvailability.toString());
         return getTextFromElement(productAvailability);
     }
 
     public String getProductCondition() {
+        log.info("get product condition" + productCondition.toString());
         return getTextFromElement(productCondition);
     }
 
     public String getProductBrand() {
+        log.info("get product brand type" + productBrandType.toString());
         return getTextFromElement(productBrandType);
     }
 
     public void changeProductQuantity(String quantity) {
         productQuantity.clear();
         sendTextToElement(productQuantity, quantity);
+        log.info("enter product auantity" + productQuantity.toString());
     }
 
     public void clickOnButton(String btnName) {
-        if (btnName.equalsIgnoreCase("Add to cart")){
+        if (btnName.equalsIgnoreCase("Add to cart")) {
             clickOnElement(addToCartButton);
+            log.info("Click on add to cart button" + addToCartButton.toString());
         } else if (btnName.equalsIgnoreCase("Submit")) {
             clickOnElement(submitBtn);
+            log.info("Click on submit button" + submitBtn.toString());
         }
     }
 
     public String getWriteYourReviewText(String text) {
         String result = null;
-        if (text.equalsIgnoreCase("WRITE YOUR REVIEW")){
+        if (text.equalsIgnoreCase("WRITE YOUR REVIEW")) {
             result = getTextFromElement(writeYourReviewText);
-        }else if (text.equalsIgnoreCase("Thank you for your review.")){
+            log.info("get write review text" + writeYourReviewText.toString());
+        } else if (text.equalsIgnoreCase("Thank you for your review.")) {
             result = getTextFromElement(successReviewMsg);
+            log.info("get message for successfully submit message" + successReviewMsg.toString());
         }
         return result;
     }
 
-    public void enterReviewDetails(String name, String email, String reviewText){
+    public void enterReviewDetails(String name, String email, String reviewText) {
         sendTextToElement(reviewNameField, name);
+        log.info("Enter reviewer name" + reviewNameField.toString());
         sendTextToElement(reviewEmailField, email);
+        log.info("Enter reviewer email" + reviewEmailField.toString());
         sendTextToElement(reviewTextField, reviewText);
+        log.info("Enter review text" + reviewTextField.toString());
     }
-
-
 }

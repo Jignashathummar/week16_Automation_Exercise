@@ -56,8 +56,12 @@ public class ViewCartPage extends Utility {
     public void clickOnButton(String buttonName) {
         if(buttonName.equals("Proceed To Checkout")){
             clickOnElement(proceedToCheckOutButton);
+            log.info("Click on proceed to checkout button" + proceedToCheckOutButton.toString());
+
         } else if (buttonName.equals("Register / Login")) {
             clickOnElement(registerOrLoginButton);
+            log.info("Click on regiter / login button" + registerOrLoginButton.toString());
+
         }
     }
 
@@ -66,6 +70,7 @@ public class ViewCartPage extends Utility {
             By byProductName = By.xpath("//div[@id='cart_info']//tbody//tr//h4");
             String productName = findElementRelativeTo(productDetail, byProductName, "near").getText();
             if(productName.equals(pName)){
+                log.info("Click on cart delee button for remove product in the cart" + pName);
                 By deleteBtn = By.xpath("//a[@class='cart_quantity_delete']");
                 findElementRelativeTo(productDetail, deleteBtn, "near").click();
             }
@@ -75,6 +80,7 @@ public class ViewCartPage extends Utility {
     public Map<String, String> getTextProductDetails(String pName){
         Map<String, String> productDetailList = new HashMap<>();
         for (WebElement productDetail : productDetails){
+            log.info("Product detais" + productDetails.toString());
             By byProductName = By.xpath("//div[@id='cart_info']//tbody//tr//h4");
             String productName = findElementRelativeTo(productDetail, byProductName, "near").getText();
             if(productName.equals(pName)){
@@ -90,6 +96,7 @@ public class ViewCartPage extends Utility {
         return productDetailList;
     }
     public String getTextDeletedProduct(){
+        log.info("get delete buton text" + deletedProductText.toString());
         return getTextFromElement(deletedProductText);
     }
 }

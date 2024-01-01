@@ -60,8 +60,10 @@ public class ProductPage extends Utility {
         String result = null;
         if (text.equalsIgnoreCase("BRANDS")) {
             result = getTextFromElement(brands);
+            log.info("get brands text" + brands.toString());
         } else if (text.equalsIgnoreCase("CATEGORY")) {
             result = getTextFromElement(category);
+            log.info("get category text" + category.toString());
         }
         return result;
     }
@@ -70,12 +72,13 @@ public class ProductPage extends Utility {
         try {
             for (WebElement element : selectBrand) {
                 if (element.getText().contains(option)) {
+                    log.info("click on brand" + element.toString());
                     element.click();
                     break;
                 }
             }
         } catch (StaleElementReferenceException e) {
-            System.out.println(e.getMessage());
+            log.info(e.getMessage());
         }
     }
 
@@ -83,7 +86,9 @@ public class ProductPage extends Utility {
         waitUntilVisibilityOfElementLocated(By.xpath("//h2[@class='title text-center']"), 5);
         Map<String, String> hashMap = new HashMap<>();
         hashMap.put("actualText", getTextFromElement(brandProductPage));
+        log.info("Product Page title" + brandProductPage.toString());
         hashMap.put("currentURL", getCurrentURL());
+        log.info("current url" + getCurrentURL());
         return hashMap;
     }
 
@@ -91,8 +96,10 @@ public class ProductPage extends Utility {
         String result = null;
         if (text.equalsIgnoreCase("All Products")) {
             result = getTextFromElement(allProductsText);
+            log.info("get Title all products" + allProductsText.toString());
         } else {
             result = getTextFromElement(searchedProductsText);
+            log.info("get search product title" + searchedProductsText.toString());
         }
         return result;
     }
@@ -103,6 +110,7 @@ public class ProductPage extends Utility {
                 if (childField.equalsIgnoreCase("Add to cart")) {
                     if (hoverProduct.equals("Hover")) {
                         mouseHoverToElement(allProductsText);
+                        log.info("mouse hover" + allProductsText.toString());
                     }
                     findElementRelativeTo(recommendedProduct, By.xpath("//a[@class='btn btn-default add-to-cart']"), "below").click();
                 } else if (childField.equalsIgnoreCase("viewProductBtn") || childField.equalsIgnoreCase("View Product")) {
@@ -114,21 +122,25 @@ public class ProductPage extends Utility {
     }
 
     public Integer getListCount() {
+        log.info("get list count" + allProductsList.toString());
         return (int) allProductsList.stream().count();
     }
 
     public void enterProductName(String text) {
         sendTextToElement(searchProductName, text);
+        log.info("Enter text on search field" + searchProductName.toString());
     }
 
     public void clickOnBtn(String buttonName) {
         if (buttonName.equals("search")) {
             clickOnElement(searchBtn);
+            log.info("Click on search button" + searchBtn.toString());
         }
     }
     public void clickOnCategoryList(String mainCategory){
        for (WebElement category : categoryList){
             if (category.getText().equalsIgnoreCase(mainCategory)){
+                log.info("Click on category" + category.toString());
                 clickOnElement(category);
                 break;
             }
@@ -138,10 +150,9 @@ public class ProductPage extends Utility {
         for (WebElement linkText: womenSubMenuList){
             System.out.println(linkText.getText());
             if (linkText.getText().equalsIgnoreCase(categoryLink)){
+                log.info("Click on submenu" + linkText.toString());
                 clickOnElement(linkText);
                 break;
-            } else {
-                System.out.println("Sub category is not available");
             }
         }
     }

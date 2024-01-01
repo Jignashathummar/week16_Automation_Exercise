@@ -27,6 +27,7 @@ public class SearchPage extends Utility {
         boolean result = true;
         for (WebElement element : searchedProductNameList) {
             if (!element.getText().contains(productName)) {
+                log.info("Product is not in the list" + searchedProductNameList.toString());
                 result = false;
             }
         }
@@ -38,6 +39,8 @@ public class SearchPage extends Utility {
             productNameList.add(p.getText());
             findElementRelativeTo(p, By.xpath("//a[@class='btn btn-default add-to-cart']"), "below").click();
             clickOnElement(continueBtn);
+            log.info("Click On continue button" + continueBtn.toString());
+
         }
         return productNameList;
     }
