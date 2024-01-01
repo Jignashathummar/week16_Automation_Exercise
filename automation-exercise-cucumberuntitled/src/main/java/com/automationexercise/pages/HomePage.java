@@ -113,35 +113,44 @@ public class HomePage extends Utility {
             log.info("Enter subscription Text" + subscriptionText.toString());
         } else if (text.equalsIgnoreCase("RECOMMENDED ITEMS")) {
             result = getTextFromElement(recommendedItemsText);
+            log.info("Enter RecommendedItems Text" + recommendedItemsText.toString());
         } else {
             result = getTextFromElement(subscriptionSuccessMsg);
+            log.info("Enter subscription Message" + subscriptionSuccessMsg.toString());
         }
         return result;
     }
 
     public void enterSubscriptionEmailAndClickOnArrowBtn(String email) {
         sendTextToElement(subscriptionEmail, email);
+        log.info("Enter subscription Email" + subscriptionEmail.toString());
         clickOnElement(subscriptionArrowBtn);
+        log.info("Click on Subscription Arrow Button" + subscriptionArrowBtn.toString());
     }
 
     public boolean checkTextIsOnVisibleScreen() {
+        log.info("Verify full Fledged Text is visible" + fullFledgedText.toString());
         return isElementWithinVisibleScreen(fullFledgedText);
     }
 
     public String getFullFledgedText() {
+        log.info("Verify full Fledged Text" + fullFledgedText.toString());
         return getTextFromElement(fullFledgedText);
     }
 
     public void scrollToTopOnThePage() {
         scrollToTop();
+        log.info("Scroll To top");
     }
 
     public void clickOnRecommendedProductAddToCart(String productName, String listType) {
         List<WebElement> webElementList = null;
         if (listType.equalsIgnoreCase("Recommended product")) {
             webElementList = recommendedProductNameList;
+            log.info("Get List Product name" + recommendedProductNameList.toString());
         } else {
             webElementList = productList;
+            log.info("Get Product List" + productList.toString());
         }
         for (WebElement recommendedProduct : Objects.requireNonNull(webElementList)) {
             if (recommendedProduct.getText().equalsIgnoreCase(productName)) {
@@ -154,8 +163,10 @@ public class HomePage extends Utility {
     public void clickOnViewCart(String button) {
         if (button.equalsIgnoreCase("View Cart")) {
             clickOnElement(viewCart);
+            log.info("Click on View Cart" + viewCart.toString());
         } else if (button.equalsIgnoreCase("Continue Shopping")) {
             clickOnElement(continueButton);
+            log.info("Click on Continue Button" + continueButton.toString());
         }
     }
 }

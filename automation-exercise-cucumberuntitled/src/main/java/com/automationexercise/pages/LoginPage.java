@@ -23,15 +23,19 @@ public class LoginPage extends Utility {
     WebElement loginBtn;
 
     public String getTextLoginToYourAccount(){
+        log.info("Verify Login To Your Account" + loginToYourAccount.toString());
         return getTextFromElement(loginToYourAccount);
     }
 
     public void enterEmailAndPassword(String userName, String password){
         sendTextToElement(emailField, userName);
+        log.info("Enter email" + emailField.toString());
         sendTextToElement(passwordField,password);
+        log.info("Enter Password" + passwordField.toString());
     }
 
     public void clickOnLoginBtn(){
         clickOnElement(loginBtn);
+        log.info("Click on Login Button" + loginBtn.toString());
     }
 }
