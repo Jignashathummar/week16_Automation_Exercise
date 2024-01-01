@@ -28,7 +28,6 @@ Feature: Register Feature
     And I Click on "Signup" button.
     Then Verify that "Email Address already exist!" visible.
 
-
   Scenario: User should verify address details in checkout page
     And I Enter "Prime" and email address.
     And I Click on "Signup" button.

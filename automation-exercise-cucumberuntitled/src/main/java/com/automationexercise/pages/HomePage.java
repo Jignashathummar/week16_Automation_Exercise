@@ -1,8 +1,6 @@
 package com.automationexercise.pages;
 
 import com.automationexercise.utility.Utility;
-import org.apache.log4j.LogManager;
-import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebElement;
@@ -13,8 +11,6 @@ import java.util.List;
 import java.util.Objects;
 
 public class HomePage extends Utility {
-    private static final Logger log = LogManager.getLogger(RegistrationPage.class);
-
     @CacheLookup
     @FindBy(xpath = "//ul[@class='nav navbar-nav']/li")
     List<WebElement> topMenu;
@@ -91,13 +87,16 @@ public class HomePage extends Utility {
     public void scrollDownToElement(String elementText) {
         if (elementText.equalsIgnoreCase("SUBSCRIPTION")) {
             scrollToElement(subscriptionText);
+            log.info("Click on scroll button until subscription" + subscriptionText.toString());
         } else if (elementText.equalsIgnoreCase("RECOMMENDED ITEMS")) {
             scrollToElement(recommendedItemsText);
+            log.info("Click on scroll button until Recommended Items" + recommendedItemsText.toString());
         }
     }
 
     public boolean clickOnArrowBtn() {
         clickOnElement(arrowBtn);
+        log.info("Click on Arrow Button" + arrowBtn.toString());
         try {
             Thread.sleep(2000);
         } catch (InterruptedException e) {
@@ -111,6 +110,7 @@ public class HomePage extends Utility {
         String result = null;
         if (text.equalsIgnoreCase("SUBSCRIPTION")) {
             result = getTextFromElement(subscriptionText);
+            log.info("Enter subscription Text" + subscriptionText.toString());
         } else if (text.equalsIgnoreCase("RECOMMENDED ITEMS")) {
             result = getTextFromElement(recommendedItemsText);
         } else {

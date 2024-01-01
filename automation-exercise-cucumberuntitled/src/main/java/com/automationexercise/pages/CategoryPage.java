@@ -18,8 +18,10 @@ public class CategoryPage extends Utility {
         String res = null;
         if(text.equalsIgnoreCase("MEN - TSHIRTS PRODUCTS")){
             res = getTextFromElement(menDressProductText);
+            log.info("SubProduct Title of Men category" + menDressProductText.toString());
         }else{
             res = getTextFromElement(womenDressProductText);
+            log.info("SubProduct Title of Women category" + womenDressProductText.toString());
         }
         return res;
     }

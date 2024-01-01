@@ -49,34 +49,47 @@ public class ContactUsPage extends Utility {
         String result = null;
         if (text.equalsIgnoreCase("Get In Touch")) {
             result = getTextFromElement(getInTouch);
-        } else if(text.equals("Success! Your details have been submitted successfully.")){
+            log.info("Verify Text Get In Touch" + getInTouch.toString());
+        } else if (text.equals("Success! Your details have been submitted successfully.")) {
             result = getTextFromElement(successMsgAfterSubmitForContactUs);
-        }else if(text.equalsIgnoreCase("Test Cases")){
+            log.info("Verify Text Success Msg After Submit on contact Us" + successMsgAfterSubmitForContactUs.toString());
+        } else if (text.equalsIgnoreCase("Test Cases")) {
             result = getTextFromElement(testCasesTitle);
+            log.info("Verify Text Test case Title" + testCasesTitle.toString());
         }
         return result;
     }
 
     public void enterContactUsDetails(String uName, String uEmail, String uSubject, String uMessage) {
         sendTextToElement(name, uName);
+        log.info("Enter Name" + name.toString());
         sendTextToElement(email, uEmail);
+        log.info("Enter Email" + email.toString());
         sendTextToElement(subject, uSubject);
+        log.info("Enter Subject" + subject.toString());
         sendTextToElement(message, uMessage);
+        log.info("Enter Message" + message.toString());
     }
 
     public void uploadFile() {
         sendTextToElement(file, "C:/Users/thumm/IdeaProjects/gitdemo/a.txt");
+        log.info("Upload File" + file.toString());
     }
 
     public void clickOnSubmitBtn() {
         clickOnElement(submitBtn);
-    }
-    public void clickOnAlertOkBtn(){
-        switchToAlert();
-        acceptAlert();
+        log.info("Click On Submit Button" + submitBtn.toString());
     }
 
-    public void clickOnHomeBtn(){
+    public void clickOnAlertOkBtn() {
+        switchToAlert();
+        log.info("Click on SSwitch to Alert");
+        acceptAlert();
+        log.info("Click on accept alert");
+    }
+
+    public void clickOnHomeBtn() {
         clickOnElement(homeBtn);
+        log.info("Click On Home Button" + homeBtn.toString());
     }
 }

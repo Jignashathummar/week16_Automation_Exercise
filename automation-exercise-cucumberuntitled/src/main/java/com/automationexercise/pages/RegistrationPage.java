@@ -8,8 +8,6 @@ import org.openqa.selenium.support.FindBy;
 import java.util.List;
 
 public class RegistrationPage extends Utility {
-//    private static final Logger log = LogManager.getLogger(RegistrationPage.class);
-
     @CacheLookup
     @FindBy(xpath = "//h2[normalize-space()='New User Signup!']")
     WebElement verifyNewUserSignup;
