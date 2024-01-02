@@ -1,6 +1,8 @@
 package com.automationexercise.pages;
 
 import com.automationexercise.utility.Utility;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
@@ -10,6 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SearchPage extends Utility {
+    protected static final Logger log = LogManager.getLogger(SearchPage.class);
     List<String> productNameList = new ArrayList<>();
     @CacheLookup
     @FindBy(xpath = "//div[@class='productinfo text-center']//p")

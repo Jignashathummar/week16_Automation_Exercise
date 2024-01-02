@@ -35,7 +35,7 @@
 <a href="#"><span class="badge badge-primary">Nopcommerce Report</span></a>
 </li>
 <li class="m-r-10">
-<a href="#"><span class="badge badge-primary">Jan 1, 2024 02:58:36 PM</span></a>
+<a href="#"><span class="badge badge-primary">Jan 1, 2024 05:09:34 PM</span></a>
 </li>
 </ul>
 </div>
@@ -66,13 +66,13 @@
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Started</p>
-<h3>Jan 1, 2024 02:58:36 PM</h3>
+<h3>Jan 1, 2024 05:09:34 PM</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Ended</p>
-<h3>Jan 1, 2024 02:58:56 PM</h3>
+<h3>Jan 1, 2024 05:11:38 PM</h3>
 </div></div>
 </div>
 <div class="col-md-3">
@@ -143,7 +143,7 @@
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='100%'><b>2</b> steps passed</small></div>
+<div><small data-tooltip='100%'><b>18</b> steps passed</small></div>
 <div>
 <small data-tooltip='0%'><b>0</b> steps failed,
 <b>0</b> skipped, <b data-tooltip='%'>0</b> others
@@ -162,7 +162,7 @@
 </div></div>
 <script>
 var timeline = {
-"Product page and Product Details":19.54
+"Register Feature":123.215
 };
 </script>
 <div class="row">
@@ -172,14 +172,6 @@ var timeline = {
 <div class="card-body pb-0 pt-0"><table class="table table-sm table-bordered">
 <thead><tr class="bg-gray"><th>Name</th><th>Passed</th><th>Failed</th><th>Skipped</th><th>Others</th><th>Passed %</th></tr></thead><tbody>
 <tr>
-<td>@regression</td>
-<td>1</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>100%</td>
-</tr>
-<tr>
 <td>@author_JignashThummar</td>
 <td>1</td>
 <td>0</td>
@@ -188,7 +180,15 @@ var timeline = {
 <td>100%</td>
 </tr>
 <tr>
-<td>@testing</td>
+<td>@regression</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>@register</td>
 <td>1</td>
 <td>0</td>
 <td>0</td>
@@ -237,7 +237,7 @@ warningChild: 0,
 skipChild: 0,
 infoChild: 0,
 grandChildCount: 5,
-passGrandChild: 2,
+passGrandChild: 18,
 failGrandChild: 0,
 warningGrandChild: 0,
 skipGrandChild: 0,
@@ -262,7 +262,7 @@ eventsCount: 5,
 <li class="dropdown">
 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-tag"></i></a>
 <ul id="tag-toggle" class="dropdown-menu dropdown-md p-v-0">
-<a class="dropdown-item" href="#">@regression</a><a class="dropdown-item" href="#">@author_JignashThummar</a><a class="dropdown-item" href="#">@testing</a>
+<a class="dropdown-item" href="#">@author_JignashThummar</a><a class="dropdown-item" href="#">@regression</a><a class="dropdown-item" href="#">@register</a>
 </ul>
 </li>
 </ul>
@@ -273,9 +273,9 @@ eventsCount: 5,
           tag=""
           device="">
           <div class="test-detail">
-            <p class="name">Product page and Product Details</p>
+            <p class="name">Register Feature</p>
             <p class="text-sm">
-              <span>2:58:36 PM</span> / <span>00:00:19:540</span>
+              <span>5:09:35 PM</span> / <span>00:02:03:215</span>
               <span class="badge pass-bg log float-right">Pass</span>
             </p>
           </div>
@@ -283,28 +283,24 @@ eventsCount: 5,
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-pass">Product page and Product Details</h5>
-<span class='badge badge-success'>01.01.2024 2:58:36 PM</span>
-<span class='badge badge-danger'>01.01.2024 2:58:56 PM</span>
-<span class='badge badge-default'>00:00:19:540</span>
+<h5 class="test-status text-pass">Register Feature</h5>
+<span class='badge badge-success'>01.01.2024 5:09:35 PM</span>
+<span class='badge badge-danger'>01.01.2024 5:11:38 PM</span>
+<span class='badge badge-default'>00:02:03:215</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
 <span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
 <span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
 </div>
-<div class="m-t-10 m-l-5"> User can Search product
-User can Verify subscription in Cart page
-User can Added Products in Cart
-User can Verify Product Quantity in Cart
-User can Place Order: Register while Checkout
-User can remove products From Cart
-User can search products and verify cart after login</div>
+<div class="m-t-10 m-l-5"> User have to perform Successfully Register
+User can register with existing email
+User can Place Order: Register before Checkout</div>
 </div>
 </div>
 <div class="accordion mt-4">
   <div class="card">
     <div class="card-header" role="tab">
       <div class="card-title">
-        <div class="node" id="2"><span class="badge log pass-bg mr-2">Pass</span>User should download Invoice after purchase order.</div>
+        <div class="node" id="2"><span class="badge log pass-bg mr-2">Pass</span>User should verify address details in checkout page</div>
       </div>
     </div>
         <div class="collapse">
@@ -314,8 +310,88 @@ User can search products and verify cart after login</div>
       <div>
       </div>
               </div>
-              <div class="step pass-bg" title="com.automationexercise.steps.ProductSteps.clickButtonAndVerifyInvoiceIsDownloAdedSuccessfully(java.lang.String)">
-                <span>And Click "Download Invoice" button and verify invoice is downloaded successfully</span>
+              <div class="step pass-bg" title="com.automationexercise.steps.RegistrationPageSteps.iClickOnTopMenuButton(java.lang.String)">
+                <span>When I click on top menu "Signup / Login"</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.automationexercise.steps.RegistrationPageSteps.enterAndEmailAddress(java.lang.String)">
+                <span>And I Enter "Prime" and email address.</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.automationexercise.steps.RegistrationPageSteps.iClickOnButton(java.lang.String)">
+                <span>And I Click on "Signup" button.</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.automationexercise.steps.RegistrationPageSteps.verifyThatVisible(java.lang.String)">
+                <span>And Verify that "ENTER ACCOUNT INFORMATION" visible.</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.automationexercise.steps.RegistrationPageSteps.fillDetailsTitleNameEmailPasswordDateOfBirth(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)">
+                <span>And Fill Details: Title: "Mrs",Name,Email,Password: "Prime@123",Date of Birth: "15/November/2000", FirstName: "Prime", LastName: "Test",Company: "Prime",Address: "Alexendra Road",Country: "India", State: "Rajasthan", City: "Jaypur", Zipcode: "382350",Mobile Number: "9123453254"</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.automationexercise.steps.RegistrationPageSteps.selectCheckbox(java.lang.String)">
+                <span>And Select checkbox "Sign up for our newsletter!"</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.automationexercise.steps.RegistrationPageSteps.selectCheckbox(java.lang.String)">
+                <span>And Select checkbox "Receive special offers from our partners!"</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.automationexercise.steps.RegistrationPageSteps.iClickOnButton(java.lang.String)">
+                <span>And I Click on "Create Account" button.</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.automationexercise.steps.RegistrationPageSteps.verifyThatVisible(java.lang.String)">
+                <span>And Verify that "ACCOUNT CREATED!" visible.</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.automationexercise.steps.RegistrationPageSteps.iClickOnButton(java.lang.String)">
+                <span>And I Click on "Continue" button.</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.automationexercise.steps.RegistrationPageSteps.verifyThatVisible(java.lang.String)">
+                <span>And Verify that "Logged in as Prime" visible.</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.automationexercise.steps.HomePageSteps.clickAddToCartOnIn(java.lang.String,java.lang.String)">
+                <span>And Click Add to Cart on "Blue Top" in "FEATURES ITEMS"</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.automationexercise.steps.RegistrationPageSteps.iClickOnTopMenuButton(java.lang.String)">
+                <span>And I click on top menu "Cart"</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.automationexercise.steps.RegistrationPageSteps.verifyThatPageIsDisplayed(java.lang.String)">
+                <span>And Verify that "Shopping Cart" page is displayed</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.automationexercise.steps.RegistrationPageSteps.iClickOn(java.lang.String)">
+                <span>And I Click on "Proceed To Checkout"</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.automationexercise.steps.RegistrationPageSteps.verifyThatTheAddressTitleFirstNameLastNameAddressCountryStateCityZipcodeMobileNumberIsSameFilledAtTheTimeRegistrationOfAccount(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)">
+                <span>And Verify that the "DELIVERY" address Title: "Mrs",FirstName: "Prime", LastName: "Test",Address: "Alexendra Road",Country: "India", State: "Rajasthan", City: "Jaypur", Zipcode: "382350",Mobile Number: "9123453254" is same filled at the time registration of account</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.automationexercise.steps.RegistrationPageSteps.verifyThatTheAddressTitleFirstNameLastNameAddressCountryStateCityZipcodeMobileNumberIsSameFilledAtTheTimeRegistrationOfAccount(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)">
+                <span>And Verify that the "BILLING" address Title: "Mrs",FirstName: "Prime", LastName: "Test",Address: "Alexendra Road",Country: "India", State: "Rajasthan", City: "Jaypur", Zipcode: "382350",Mobile Number: "9123453254" is same filled at the time registration of account</span>
       <div>
       </div>
               </div>
@@ -347,42 +423,6 @@ User can search products and verify cart after login</div>
 <span class="meta">
 <span class='badge log pass-bg'>1</span>
 </span>
-<p class="name">@regression</p>
-<p class="duration text-sm">1 tests</p>
-</div>
-<div class="test-contents d-none">
-<div class="info">
-<h4>@regression</h4>
-<span status="pass" class='badge log pass-bg'>1 passed</span>
-</div>
-<table class='table table-sm mt-4'>
-<thead>
-<tr>
-<th class="status-col">Status</th>
-<th class="timestamp-col">Timestamp</th>
-<th>TestName</th>
-</tr>
-</thead>
-<tbody>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>14:58:36 PM</td>
-<td>
-<a href="#" class="linked" test-id='1' id='2'>User should download Invoice after purchase order.</a>
-<div class="">
-<span class="badge badge-default">Product page and Product Details.User should download Invoice after purchase order.</span>
-</div>
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</li>
-<li class="test-item">
-<div class="test-detail">
-<span class="meta">
-<span class='badge log pass-bg'>1</span>
-</span>
 <p class="name">@author_JignashThummar</p>
 <p class="duration text-sm">1 tests</p>
 </div>
@@ -402,11 +442,11 @@ User can search products and verify cart after login</div>
 <tbody>
 <tr class="tag-test-status" status="pass">
 <td><span class="badge log pass-bg">Pass</span></td>
-<td>14:58:36 PM</td>
+<td>17:09:35 PM</td>
 <td>
-<a href="#" class="linked" test-id='1' id='2'>User should download Invoice after purchase order.</a>
+<a href="#" class="linked" test-id='1' id='2'>User should verify address details in checkout page</a>
 <div class="">
-<span class="badge badge-default">Product page and Product Details.User should download Invoice after purchase order.</span>
+<span class="badge badge-default">Register Feature.User should verify address details in checkout page</span>
 </div>
 </td>
 </tr>
@@ -419,12 +459,12 @@ User can search products and verify cart after login</div>
 <span class="meta">
 <span class='badge log pass-bg'>1</span>
 </span>
-<p class="name">@testing</p>
+<p class="name">@regression</p>
 <p class="duration text-sm">1 tests</p>
 </div>
 <div class="test-contents d-none">
 <div class="info">
-<h4>@testing</h4>
+<h4>@regression</h4>
 <span status="pass" class='badge log pass-bg'>1 passed</span>
 </div>
 <table class='table table-sm mt-4'>
@@ -438,11 +478,47 @@ User can search products and verify cart after login</div>
 <tbody>
 <tr class="tag-test-status" status="pass">
 <td><span class="badge log pass-bg">Pass</span></td>
-<td>14:58:36 PM</td>
+<td>17:09:35 PM</td>
 <td>
-<a href="#" class="linked" test-id='1' id='2'>User should download Invoice after purchase order.</a>
+<a href="#" class="linked" test-id='1' id='2'>User should verify address details in checkout page</a>
 <div class="">
-<span class="badge badge-default">Product page and Product Details.User should download Invoice after purchase order.</span>
+<span class="badge badge-default">Register Feature.User should verify address details in checkout page</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>1</span>
+</span>
+<p class="name">@register</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@register</h4>
+<span status="pass" class='badge log pass-bg'>1 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>17:09:35 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='2'>User should verify address details in checkout page</a>
+<div class="">
+<span class="badge badge-default">Register Feature.User should verify address details in checkout page</span>
 </div>
 </td>
 </tr>

@@ -1,6 +1,8 @@
 package com.automationexercise.pages;
 
 import com.automationexercise.utility.Utility;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebElement;
@@ -13,6 +15,7 @@ import java.util.Map;
 import java.util.Objects;
 
 public class ProductPage extends Utility {
+    protected static final Logger log = LogManager.getLogger(ProductPage.class);
     @CacheLookup
     @FindBy(xpath = "//h2[normalize-space()='Brands']")
     WebElement brands;

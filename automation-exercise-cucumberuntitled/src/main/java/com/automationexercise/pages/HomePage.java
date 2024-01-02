@@ -1,6 +1,8 @@
 package com.automationexercise.pages;
 
 import com.automationexercise.utility.Utility;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebElement;
@@ -11,6 +13,7 @@ import java.util.List;
 import java.util.Objects;
 
 public class HomePage extends Utility {
+    protected static final Logger log = LogManager.getLogger(HomePage.class);
     @CacheLookup
     @FindBy(xpath = "//ul[@class='nav navbar-nav']/li")
     List<WebElement> topMenu;

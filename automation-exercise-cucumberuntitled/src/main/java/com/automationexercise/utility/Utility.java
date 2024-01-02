@@ -2,10 +2,7 @@ package com.automationexercise.utility;
 
 import com.automationexercise.browserfactory.ManageBrowser;
 import com.google.common.base.Function;
-import com.automationexercise.pages.RegistrationPage;
 import org.apache.commons.io.FileUtils;
-import org.apache.log4j.LogManager;
-import org.apache.log4j.Logger;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.locators.RelativeLocator;
@@ -25,7 +22,7 @@ public class Utility extends ManageBrowser {
      *
      * This method will generate random number
      */
-    protected static final Logger log = LogManager.getLogger(RegistrationPage.class);
+
 //    public int generateRandomNumber() {
 //        return (int) (Math.random() * 5000 + 1);
 //
